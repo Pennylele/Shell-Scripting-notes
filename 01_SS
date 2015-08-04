@@ -1,0 +1,97 @@
+a. $ who am i
+venga-penny ttys000  Jul 27 16:46 
+(name), (terminal id), (date)
+
+b. $ clear
+(clear all the things in the terminal)
+
+c. $ cal
+(You’ll be able to see the calendars)
+
+d. $ cal 7 2015
+(check out the calendars of July 2015)
+
+e. $ cal aug 2015
+
+f. $ date
+(current date)
+
+g. $ date ‘+DATE:%m-%y%nTIME:%H:%M:%S'
+DATE:07-15
+TIME:17:13:00
+
+h. $ touch
+
+i. $ mkdir 
+(to create a folder)
+
+j. $ cat test
+(probably wouldn’t work, because you haven’t created the test file in your dir)
+
+k. $ cat > test
+(what it does is creating a file called test and getting into the test file)
+Then you’ll be able to type in content in the test file
+
+l. $ Ctrl + D
+(Escape the current file.)
+
+m. $ cat test   OR $ cat < test
+(check out the content in test file.)
+
+n. $ cat > random
+    $ cat random test > sample
+    $ cat sample
+(merging files)
+
+o. $ touch forrest_gump
+    $ mv forrest_gump the_green_mile
+(what it does is to change the forrest_ump name to the_green_mile)
+
+p. $ mkdir new
+    $ rm -r new     OR        $ rmdir new
+(remove the new folder)
+
+q. $ touch old
+    $ cp old Documents/old_Documents
+(copy the old text file to Documents folder and rename it old_Documents)
+
+r. $ touch old
+$ ln old new
+$ cat > old
+This is a TEST.
+$ cat new
+This is a TEST.
+(This is a hard link.)
+
+s. $ ls
+OR $ ls documents
+(see the files in documents)
+
+t. $ls -l
+(-l: long listing)
+   $ls -a
+(-a display all)
+
+u. http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
+http://www.linuxnix.com/2011/12/umask-define-linuxunix.html
+$ chmod 777 test
+(“test” is the file. The file would have )
+0 –Full permissions (Read, Write, Execute)
+1 –Write and read
+2 –Read and execute
+3 –Read only
+4 –Write and execute
+5 –Write only
+6 –Execute onlyadminadmin
+7 –No permissions
+
+So 4 is 7-4 =3 read
+2 is 7-2 =5 write
+1 is 7-1=6 execute
+4 + 2 + 1 = 7
+we have 3 different users, so 777 is the full access to the file.
+In my opinion, 7-7=0 which is the full permission, so 777 is the full permission for all 3 different users.
+so $ chmod 444 test
+would be changing the file’s permission to read only.
+
+v. $ uname -a
