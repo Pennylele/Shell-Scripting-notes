@@ -1,0 +1,67 @@
+$ wc jazzy
+(number of lines, words, and characters in the text document called jazzy)
+$ wc jazzy
+       4      20      95 jazzy
+$ cat jazzy
+This is the first line.
+We are on Youtube.
+OMG I don't know how to use shell.
+That is great...
+
+$ sort 
+(You can sort a text file’s content by alphabetical order
+OR you can write content right after you type in sort and hit enter, then the you can type in the content and hit enter, the content will be in alphabetical order.)
+
+$ cat > players
+Name-Sport-Age
+Roger-Tennis-30
+Rafel Nadal-Tennis-25
+Tiger Woods-Golf-37
+Michael Phelps-Swimmer-27
+Kobe Bryant-Basketball-34
+
+$ cat players
+Name-Sport-Age
+Roger-Tennis-30
+Rafel Nadal-Tennis-25
+Tiger Woods-Golf-37
+Michael Phelps-Swimmer-27
+Kobe Bryant-Basketball-34
+
+Once you opened a file with vim you can insert text by typing i, for instance. If you want to save your file use :w (write) or :q (quit) or :wq (for write and quit) or :q! (quit and do not save). Sometimes you need to hit the ESC key to be able to type the commands.
+
+$ cut
+$ cut -d"-" -f 1,3 players
+Name-Age
+Roger-30
+Rafel Nadal-25
+Tiger Woods-37
+Michael Phelps-27
+Kobe Bryant-34
+$ cut -d"-" -f 1,3 players
+cutName-Age
+Roger-30
+Rafel Nadal-25
+Tiger Woods-37
+Michael Phelps-27
+Kobe Bryant-34
+
+$ dd
+$ cat > test
+This is a ACII file.
+$ dd if=test of=out conv=ucase
+0+1 records in
+0+1 records out
+21 bytes transferred in 0.000033 secs (638264 bytes/sec)
+$ open test
+$ cat out
+THIS IS A ACII FILE.
+
+
+QUESTION: how to change the encoding to uff-8? Vim?
+
+ASCII is a subset of UTF-8, so all ASCII files are already UTF-8 encoded. The bytes in the ASCII file and the bytes that would result from "encoding it to UTF-8" would be exactly the same bytes. There's no difference between them, so there's no need to do anything.
+It looks like your problem is that the files are not actually ASCII. You need to determine what encoding they are using, and transcode them properly.
+http://www.tutorialspoint.com/unix_commands/iconv.htm
+e.g. 
+iconv -f US-ASCII -t UTF-8 file.php > file-utf8.php
