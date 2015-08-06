@@ -1,0 +1,46 @@
+Tutorial 16
+File name: ss1.sh
+File content: 
+#This is my first shell script.
+echo "Hello World"
+
+So if you cd to the folder that you saved ss1.sh
+type in $sh ss1.sh
+then you'll get the result of "Hello World"
+
+Tutorial 17
+File name: ss2.sh
+file content:
+#This is my second shell script.
+pwd
+ls -l
+banner "The end"
+
+Tutorial 18
+shell variables: case-sensitive. e.g. _var is allowed
+e.g. my_var is different from MY_VAR
+File name: ss3.sh
+File content:
+#This script demonstrate the 
+echo "Please enter your name"
+read my_name
+echo "Hello $my_name, it's a great day!"
+
+Tutorial 19 Positional parameters
+In the terminal: 
+$ a=25
+$ echo $a
+25
+sh File content:
+#This file takes a file name as an argument and renames it.
+#mv $1 $2 
+#cat $2
+mv $1 
+echo "Provide a file name."
+read name
+mv $1 $name
+cat $name
+
+Tutorial 20 Positional parameters
+
+

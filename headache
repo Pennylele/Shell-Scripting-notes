@@ -1,0 +1,7 @@
+This is a test file.
+$ a=25
+Venga-Pennys-MacBook-Pro:shell-scripting venga-penny$ echo $a
+25
+$ a=25
+Venga-Pennys-MacBook-Pro:shell-scripting venga-penny$ echo $a
+25
