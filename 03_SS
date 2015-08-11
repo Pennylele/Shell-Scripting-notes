@@ -41,6 +41,4 @@ read name
 mv $1 $name
 cat $name
 
-Tutorial 20 Positional parameters
-
 

@@ -1,0 +1,176 @@
+Tutorial 23 Math on Intergers using `expr`
+In ss8.sh
+#arithmetic operations
+a=5 b=30
+echo `expr $a + $b`
+echo `expr $a - $b`
+echo `expr $a \* $b`
+echo `expr $a / $b`
+echo `expr $a % $b`
+
+In the terminal
+$ sh ss8.sh
+35
+-25
+150
+0
+5
+
+
+Tutorial 24 Operator Precedence
+in ss9.sh
+#arithmetic operation
+a=30 b=15 c=2 d=5
+echo `expr $a \* \( $b + $c \) / $d`
+
+in terminal
+$ sh ss9.sh
+102
+
+
+Tutorial 25 Math on real numbers
+in ss10.sh
+#floating point arithmetic
+a=10.5
+b=3.5
+c=`echo $a + $b | bc`
+d=`echo $a - $b | bc`
+e=`echo $a \* $b | bc`
+f=`echo $a / $b | bc`
+echo $c $d $e $f
+
+in terminal
+$ sh ss10.sh
+14.0 7.0 36.7 3
+
+
+Tutorial 26 escaping characters
+in terminal
+$ sh ss11.sh
+Hey Wolrd, 
+what's up?
+what's up? 
+Hey World, 	what's up?
+Hey what's up?
+Hey World, what's up?
+Hey World, what's up?
+
+in ss11.sh
+#Escape Sequences
+echo "Hey Wolrd, \nwhat's up?"
+echo "Hey Wolrd, \rwhat's up?"
+echo "Hey World, \twhat's up?"
+echo "Hey World, \b\b\b\b\b\b\bwhat's up?"
+echo "\033[1mHey World, what's up?\033[0m"
+echo "\033[7mHey World, what's up?\033[0m"
+
+
+Tutorial 27 Do cool things with 'tput'
+in ss12.sh
+#tput-in action
+tput clear
+echo "Total number of rows on screen=\c"
+tput lines
+echo "Total number of colums on screen=\c"
+tput cols
+tput cup 15 20
+tput bold
+echo "This should be in bold"
+echo "\033[0mBye Bye"
+
+in terminal
+Total number of rows on screen=31
+Total number of colums on screen=86
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    This should be in bold
+Bye Bye
+
+
+Tutorial 28: if-then statement in action
+in terminal
+$ mkdir new
+$ echo $?
+0
+$ mkdir new
+mkdir: new: File exists
+$ echo $?
+1
+
+$ touch test
+$ sh if-then.sh
+enter source and target file names.
+test sample
+your file has been successfully renamed.
+
+in ssif-then.sh
+#if-then statement in action
+echo "enter source and target file names."
+read source target
+if mv $source $target
+then
+echo "your file has been successfully renamed."
+fi
+
+
+Tutorial 29
+in if-then-else.sh
+#if-then-else statement in action
+echo "enter source and target file names."
+read source target
+if mv $source $target
+then
+echo "your file has been successfully renamed."
+else 
+echo "The file could not be renamed."
+fi
+
+in terminal
+$ sh if-then-else.sh
+enter source and target file names.
+random youtube
+mv: rename random to youtube: No such file or directory
+The file could not be renamed.
+
+
+Tutorial 30
+in rhe test.sh
+echo "Please enter a number between 10 and 20:\c"
+read num
+if [ $num -lt 10 ]
+then
+	echo "That was under the belt partner."
+elif [ $num -gt 20 ]
+then
+	echo "That went over my head."
+else
+	echo "Now you are making sense!"
+fi
+
+in terminal
+$ sh test.sh
+Please enter a number between 10 and 20:4
+That was under the belt partner.
+$ sh test.sh
+Please enter a number between 10 and 20:30
+That went over my head.
+$ sh test.sh
+Please enter a number between 10 and 20:18
+Now you are making sense!
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+Tutorial 20 Positional parameters
+In ss5.sh:
+chmod 744 $1
+ls -l $1
+In terminal:
+$ sh ss5.sh ss1.sh
+-rwxr--r--  1 venga-penny  staff  50 Aug  4 14:47 ss1.sh
+
+In terminal:
+$ set I love cats
+$ echo $*
+I love cats
+$ echo $3
+cats
+
+Tutorial 21 Reverse Quotes or Accent Graves
+#set command is for setting positional parameters
+$ cat test
+My neigbor's dog's annoying.
+$ set `cat test`
+$ echo $*
+My neigbor's dog's annoying.
+
+In the ss5.sh:
+name=$1
+set `who am i`
+mv $name $name.$1
+#So the name is the variable, and you assign it to $1 this argument; Then you use "set" command to override the argument and set it to your computer's name($1 of set `who am i'); then mv is used to rename the file.
+
+Tutorial 22: Count the number of command line arguments using $#
+In terminal:
+$ set tom hanks is my favorite actor
+$ echo $#
+6
+
+
+
+
+
+
+
+
